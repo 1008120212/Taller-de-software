@@ -1,0 +1,321 @@
+/* Importar fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap");
+
+/* Variables CSS personalizadas */
+:root {
+  --primary-color: #111827;
+  --secondary-color: #d97706;
+  --accent-color: #1f2937;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --header-height: 80px;
+}
+
+/* Configuración base */
+html {
+  scroll-padding-top: 5rem;
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--secondary-color) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--secondary-color) !important;
+}
+
+/* Promo Swiper Specific Styles */
+.promoSwiper .swiper-pagination {
+  bottom: -25px !important;
+}
+
+.promoSwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+.promoSwiper .swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.promoSwiper .swiper-button-next,
+.promoSwiper .swiper-button-prev {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50% !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.promoSwiper .swiper-button-next:hover,
+.promoSwiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* FullCalendar Styles */
+.fc-daygrid-event {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.fc-event-main {
+  padding: 2px 4px;
+  font-weight: 500;
+}
+
+.fc-toolbar-title {
+  font-family: "DM Serif Display", serif;
+  color: var(--primary-color);
+}
+
+/* Navigation Styles */
+.mobile-menu {
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active .absolute {
+  width: 100%;
+}
+
+/* Hamburger Animation */
+.hamburger-lines {
+  position: relative;
+  width: 20px;
+  height: 16px;
+}
+
+.hamburger-lines .line {
+  position: absolute;
+  left: 0;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.hamburger-lines .line1 {
+  top: 0;
+}
+
+.hamburger-lines .line2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-lines .line3 {
+  bottom: 0;
+}
+
+.hamburger-lines.active .line1 {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.hamburger-lines.active .line2 {
+  opacity: 0;
+  transform: translateY(-50%) scale(0);
+}
+
+.hamburger-lines.active .line3 {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+/* Mobile Menu Animation */
+#mobileMenu {
+  height: calc(100vh - 64px);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: #0f172a;
+}
+
+#mobileMenu.show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Logo Animation */
+@keyframes logoGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+  }
+}
+
+.logo-glow {
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+/* Time Slots Styles */
+.booked-slot {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.available-slot {
+  background-color: #fef3c7;
+  color: #92400e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.available-slot:hover {
+  background-color: #fde68a;
+  border-color: #d97706;
+}
+
+.selected-slot {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* Promo Cards */
+.promo-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Heights */
+.section-full {
+  min-height: 100vh;
+}
+
+.section-half {
+  min-height: 50vh;
+}
+
+/* Utility Classes */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Styles */
+.form-input {
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--secondary-color);
+  border-color: transparent;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(to right, var(--secondary-color), #b45309);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #b45309, #92400e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger-lines {
+    width: 18px;
+    height: 14px;
+  }
+
+  #mobileMenu {
+    height: calc(100vh - 56px);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
